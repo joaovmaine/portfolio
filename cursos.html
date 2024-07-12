@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor Maine - Portfólio</title>
+    <meta name="description" content="Página Home">
+    <meta name="author" content="João Victor Maine">
+    <link rel="stylesheet" href="cursos.css"></head>
+<body>
+
+<!-- Menu -->
+    <header>
+            <h1>João Victor Maine</h1>
+        <nav>
+            <div class="menu-icon" id="menuIcon">&#9776;</div>
+            <ul class="nav_list" id="navList">
+                <li><a href="index.html">Projetos Web</a></li>
+                <li><a href="index.html">Aplicações Python</a></li>
+                <li><a href="index.html">Análise de Dados</a></li>
+                <li><a href="cursos.html">Cursos</a></li>   
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <ul class="timeline">
+            <li class="event">
+                <div class="year">Atual</div>
+                <div class="details">Udemy - Curso de Python 3 do Básico ao Avançado (141 horas)</div>
+            </li>
+    
+            <li class="event">
+                <div class="year">Atual</div>
+                <div class="details">Udemy - Webdesign Front-end Fundamentos (127,5 horas)</div>
+            </li>
+
+            <li class="event">
+                <div class="year">2023</div>
+                <div class="details">Udemy - Suporte Técnico na Prática (10 horas)</div>
+            </li>
+        </ul>
+    </main>
+ 
+    <!-- Script do Menu -->
+    <script> 
+        document.getElementById("menuIcon").addEventListener("click", function() {
+            var navList = document.getElementById("navList");
+            navList.classList.toggle("show");
+        });
+    </script>
+   
+</body>
+</html>

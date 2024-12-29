@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de João Vmaine, desenvolvedor web e estudante de ADS. Explore projetos, formação e mais!">
+    <title>Portfólio | joaovmaine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <h1 class="logo">SEJA BEM VINDO(A).</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#formacao" class="nav-link">Formação</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="sobre" class="sobre">
+            <div>
+                <img src="joaovmaine.png" alt="Foto de João Victor Maine" class="avatar">
+                <h2>Olá. Prazer, sou o João Victor Maine!</h2>
+                <p>Sou desenvolvedor web e estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia, inovação e o poder que elas têm para transformar ideias em soluções práticas.
+                    Com criatividade e determinação, dedico-me a construir projetos únicos, sempre buscando aprender, evoluir e contribuir para um mundo mais conectado e eficiente.</p>
+            </div>
+        </section>
+        
+        <section id="projetos" class="projetos">
+            <div>
+                <h2>Projetos</h2>
+                <p>Aqui você encontrará alguns dos trabalhos em que desenvolvi.</p>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <h3>LA Essências</h3>
+                    <p>Site criado para uma empresa de perfumaria. Projeto feito completamente por mim, exclusivamente para a empresa</p>
+                    <a href="#">Ver mais</a>
+                </div>
+                <div class="card">
+                    <h3>Conversor de vídeos do YouTube</h3>
+                    <p>Este é um executável codificado em Python para converter e baixar vídeos do YouTube em MP3.</p>
+                    <a href="#">Ver mais</a>
+                </div>
+                <div class="card">
+                    <h3>Terra Assessoria Ambiental e Topografia</h3>
+                    <p>Site criado para a empresa que trabalho atualmente. Projeto feito completamente por mim, exclusivamente para a empresa.</p>
+                    <a href="#">Ver mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacao" class="formacao">
+            <div>
+                <h2>Formação</h2>
+                <p>Sou estudante de Análise e Desenvolvimento de Sistemas, com foco no desenvolvimento web e mais de 4 anos de experiência como autodidata em tecnologia. Durante essa jornada, me especializei na criação de sites e soluções digitais personalizadas, combinando criatividade e técnica para atender às necessidades de cada projeto.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 | joaovmaine - Todos direitos reservados.</p>
+        <p>Entre em contato: <a href="mailto:joaovmaine@gmail.com">joaovmaine@gmail.com</a></p>
+        <a href="https://github.com/joaovmaine">GitHub</a>
+        <a href="https://www.linkedin.com/in/joaovmaine/">Linkedin</a>
+    </footer>
+
+    <script>
+        // Seleciona o botão e o menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+    
+        // Adiciona o evento de clique para abrir/fechar o menu
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

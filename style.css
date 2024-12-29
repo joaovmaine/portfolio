@@ -1,0 +1,208 @@
+/* ===== Estilo Geral ===== */
+html {
+    scroll-behavior: smooth; /* Suaviza o scroll ao navegar para seções */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
+    font-size: 18px; /* Tamanho de texto base */
+    margin: 0; /* Remove margens externas */
+    padding: 0; /* Remove espaçamento interno */
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+}
+
+/* ===== Cabeçalho Fixo ===== */
+header {
+    background-color: #111; /* Fundo escuro do cabeçalho */
+    transition: background-color 0.3s ease; /* Suaviza a transição da cor ao scroll */
+    align-items: center; /* Centraliza itens verticalmente */
+    display: flex; /* Usa flexbox para alinhamento */
+    justify-content: space-between; /* Espaça os itens no cabeçalho */
+    padding: 1rem; /* Espaçamento interno */
+    position: fixed; /* Mantém o cabeçalho fixo no topo */
+    width: 100%; /* Ocupa toda a largura */
+    top: 0; /* Posicionado no topo */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao cabeçalho */
+    box-sizing: border-box; /* Inclui padding no tamanho total */
+}
+
+header h1 {
+    color: #61dafb;
+}
+
+header.scrolled {
+    background-color: rgba(17, 17, 17, 0.9); /* Torna o fundo semi-transparente ao rolar */
+}
+
+.logo {
+    font-size: 1.5rem; /* Tamanho do texto da logo */
+    font-weight: bold; /* Negrito na logo */
+}
+
+/* ===== Menu de Navegação ===== */
+.menu {
+    list-style: none; /* Remove marcadores de lista */
+    display: flex; /* Usa flexbox para organizar os links */
+    gap: 1rem; /* Espaçamento entre links */
+    margin: 0; /* Remove margens */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.menu li {
+    margin: 0; /* Remove margens ao redor dos itens */
+}
+
+.menu li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #61dafb; /* Cor dos links */
+    transition: color 0.3s ease; /* Suaviza a transição de cor ao hover */
+}
+
+.menu li a:hover {
+    color: #21a1f1; /* Muda a cor ao passar o mouse */
+    border-radius: 5px; /* Adiciona bordas arredondadas nos links */
+}
+
+/* ===== Botão Responsivo ===== */
+.menu-toggle {
+    display: none; /* Esconde o botão no desktop */
+    flex-direction: column; /* Organiza as linhas verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    z-index: 1001; /* Garante que fique acima do menu */
+    position: relative; /* Posiciona em relação ao cabeçalho */
+}
+
+.menu-toggle .line {
+    width: 30px; /* Largura das linhas do botão */
+    height: 3px; /* Altura das linhas do botão */
+    background-color: #fff; /* Cor das linhas */
+    margin: 5px 0; /* Espaçamento entre as linhas */
+    border-radius: 3px; /* Arredonda as bordas das linhas */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza transições de animação */
+}
+
+/* Animação do Botão ao Ativar */
+.menu-toggle.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Rotaciona a primeira linha */
+}
+
+.menu-toggle.active .line:nth-child(2) {
+    opacity: 0; /* Esconde a linha do meio */
+}
+
+.menu-toggle.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Rotaciona a terceira linha */
+}
+
+/* ===== Responsividade do Menu ===== */
+@media (max-width: 768px) {
+    nav {
+        position: fixed; /* Torna o menu fixo */
+        top: 0; /* Começa no topo */
+        left: 0; /* Alinha à esquerda */
+        width: 100%; /* Ocupa toda a largura */
+        height: 100vh; /* Ocupa toda a altura */
+        background-color: #111; /* Fundo escuro */
+        display: flex; /* Flexbox para centralização */
+        flex-direction: column; /* Alinha os links verticalmente */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        transform: translateY(-100%); /* Esconde o menu inicialmente */
+        transition: transform 0.3s ease; /* Animação de entrada/saída */
+        z-index: 999; /* Fica acima do conteúdo principal */
+    }
+
+    nav.active {
+        transform: translateY(0); /* Exibe o menu ao ativar */
+    }
+
+    .menu {
+        flex-direction: column; /* Links em coluna */
+        gap: 1.5rem; /* Espaçamento maior entre os links */
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o botão responsivo */
+    }
+}
+
+/* ===== Seções ===== */
+section {
+    max-width: 1200px; /* Limita a largura máxima das seções */
+    margin: 0 auto; /* Centraliza as seções */
+    padding: 40px 20px; /* Adiciona padding para dar espaçamento interno */
+}
+
+/* ===== Seção Sobre ===== */
+section.sobre {
+    text-align: center; /* Centraliza o conteúdo */
+    margin-top: 65px; /* Espaço abaixo do cabeçalho fixo */
+}
+
+.avatar {
+    width: 250px; /* Largura do avatar */
+    height: 250px; /* Altura do avatar */
+    border-radius: 50%; /* Torna o avatar circular */
+    margin: 1rem auto; /* Centraliza e adiciona espaçamento */
+}
+
+/* ===== Seção Projetos ===== */
+section.projetos {
+    text-align: center; /* Centraliza o texto */
+}
+
+.card-container {
+    display: flex; /* Flexbox para organização */
+    gap: 1rem; /* Espaçamento entre cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.card-container h3 {
+    color:  none;
+}
+
+.card {
+    background-color: #222; /* Fundo escuro do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 1rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto dentro do card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+}
+
+.card a {
+    color: #61dafb; /* Cor azul dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.card a:hover {
+    color: #21a1f1; /* Muda a cor ao passar o mouse */
+}
+
+/* ===== Seção Formação ===== */
+section.formacao {
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* ===== Rodapé ===== */
+footer {
+    background-color: #111; /* Fundo escuro */
+    text-align: center; /* Centraliza o texto */
+}
+
+footer a {
+    color: #61dafb; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+footer a:hover {
+    color: #21a1f1; /* Muda a cor ao passar o mouse */
+}
